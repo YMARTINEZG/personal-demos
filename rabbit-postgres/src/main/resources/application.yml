@@ -1,0 +1,16 @@
+server:
+  port: 8090
+spring:
+  rabbitmq:
+    host:localhost
+    port:5672
+    username:guest
+    password:guest
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: aircraft-exchange
+          group: aircraft
+    default:
+      contentType: application/json
